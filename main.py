@@ -10,7 +10,7 @@ import csv
 import argparse
 import logging
 
-def scrape_election_results(address):
+def scrape_election_results(output_file, address):
     logging.basicConfig(level=logging.INFO, format='%(message)s')
 
     response = get(address)
@@ -61,15 +61,16 @@ def scrape_election_results(address):
     logging.info("Scraping elections to election_results.csv")
 
     # create new csv file
-    with open("election_results.csv", mode="w", newline="", encoding="utf-8") as file:
+    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(header)
         writer.writerows(data_rows)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Scrape election results from a given address.")
+    parser.add_argument("output_file", type=str, help="Name of the output CSV file")
     parser.add_argument("address", type=str, help="URL address of the election results page")
     args = parser.parse_args()
 
-    scrape_election_results(args.address)
+    scrape_election_results(args.output_file, args.address)
     logging.info("Program finished.")
