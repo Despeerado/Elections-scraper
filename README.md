@@ -1,4 +1,4 @@
-# Election sscraper
+# Election scraper
 
 ## Popis projektu
 
