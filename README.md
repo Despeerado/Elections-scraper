@@ -11,14 +11,12 @@ Instalace knihoven:
 ```
 pip3 --version
 pip3 install -r requirements.txt
-
 ```
 ## Spuštění projektu
 Spuštění souboru main.py v rámci přík. řádku vyžaduje 2 argumenty.
 
 ```
 python main.py <vysledny-soubor> <odkaz-uzemniho-celku>
-
 ```
 
 Následně se vám stáhnou výsledky jako soubor s příponou .csv.
@@ -33,7 +31,6 @@ Výsledky hlasování pro okres Olomouc:
 spuštění programu:
 ```
 python main.py election_results.csv https://volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=12&xnumnuts=7102
-
 ```
 
 průběh programu:
